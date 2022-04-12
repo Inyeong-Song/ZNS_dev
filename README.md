@@ -23,8 +23,8 @@ $ sudo apt-get install -y aptitude
 $ sudo aptitude install flex
 $ sudo aptitude install bison
 $ sudo apt-get install -y cpu-checker
-$ sudo apt-get install -y 
-$ sudo apt-get install -y 
+$ sudo apt-get install -y glib-2.56
+$ sudo apt-get install -y gthread-2.0
 $ sudo apt-get install -y 
 $ sudo apt-get install -y 
 $ sudo apt-get install -y 

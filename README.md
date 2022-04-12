@@ -1,8 +1,8 @@
 # ZNS_dev
 
 ## 1. Install apps
-* $ sudo apt-get install -y git
-* $ sudo apt-get install -y g++
+  $ sudo apt-get install -y git
+  $ sudo apt-get install -y g++
 * $ sudo apt-get install -y nvme-cli
 * $ sudo apt-get install -y uuid-dev
 * $ sudo apt-get install -y gcc

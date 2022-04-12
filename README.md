@@ -1,6 +1,6 @@
 # ZNS_dev
 
- 1. Install apps
+### Install apps
 
 ```
 $ sudo apt-get install -y git
@@ -36,7 +36,7 @@ $ sudo apt-get install -y
 $ sudo apt-get install -y 
 ```
 
- 2. 시스템이 KVM 가상화를 지원하는지 확인하려면 다음 명령을 실행하십시오.
+### 시스템이 KVM 가상화를 지원하는지 확인하려면 다음 명령을 실행하십시오.
 
 ```
 $ sudo kvm-ok

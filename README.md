@@ -1,7 +1,7 @@
 # ZNS_dev
 
-1. Install apps \n
-$ sudo apt-get intsall -y git \n
+1. Install apps \r\n
+$ sudo apt-get intsall -y git \r\n
 $ sudo apt-get intsall -y g++
 $ sudo apt-get intsall -y nvme-cli
 $ sudo apt-get intsall -y uuid-dev

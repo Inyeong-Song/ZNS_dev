@@ -1,7 +1,6 @@
 # ZNS_dev
 
-### Install apps
-
+### Install using apt
 ```
 $ sudo apt-get install -y git
 $ sudo apt-get install -y g++
@@ -17,23 +16,18 @@ $ sudo apt-get install -y ninja-build
 $ sudo apt-get install -y meson
 $ sudo apt-get install -y tar
 $ sudo apt-get install -y fio
+$ sudo apt-get install -y libglib2.0
 $ sudo apt-get install -y autoconf
 $ sudo apt-get install -y libtool
 $ sudo apt-get install -y aptitude
 $ sudo aptitude install flex
 $ sudo aptitude install bison
 $ sudo apt-get install -y cpu-checker
-$ sudo apt-get install -y
-$ sudo apt-get install -y
+$ sudo apt-get install -y libffi-dev
+$ sudo apt-get install -y libmount-dev
+$ sudo apt-get install -y libpcre3-dev
 $ sudo apt-get install -y 
-$ sudo apt-get install -y 
-$ sudo apt-get install -y 
-$ sudo apt-get install -y 
-$ sudo apt-get install -y 
-$ sudo apt-get install -y 
-$ sudo apt-get install -y 
-$ sudo apt-get install -y 
-$ sudo apt-get install -y 
+
 ```
 
 ### 시스템이 KVM 가상화를 지원하는지 확인하려면 다음 명령을 실행하십시오.

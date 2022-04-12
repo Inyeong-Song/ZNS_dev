@@ -1,6 +1,6 @@
 # ZNS_dev
 
-## 1. Install apps
+ 1. Install apps
 ```
 $ sudo apt-get install -y git
 $ sudo apt-get install -y g++

@@ -15,14 +15,11 @@ $ sudo apt-get intsall -y ninja-build
 $ sudo apt-get intsall -y meson
 $ sudo apt-get intsall -y tar
 $ sudo apt-get intsall -y fio
-$ sudo apt-get intsall -y 
-$ sudo apt-get intsall -y 
-$ sudo apt-get intsall -y 
-$ sudo apt-get intsall -y 
-$ sudo apt-get intsall -y 
-$ sudo apt-get intsall -y 
-$ sudo apt-get intsall -y 
-$ sudo apt-get intsall -y 
+$ sudo apt-get intsall -y autoconf
+$ sudo apt-get intsall -y libtool
+$ sudo apt-get intsall -y aptitude
+$ sudo aptitude install flex
+$ sudo aptitude install bison
 
 
 2. 

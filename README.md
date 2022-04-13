@@ -71,4 +71,7 @@
 > cd ~
 > wget https://releases.ubuntu.com/focal/ubuntu-20.04.4-live-server-amd64.iso
 > ```
-
++ 이미지 설치 디스크 생성
+> ```
+> qemu-img create -f qcow2 ubuntu.img 20G
+> ```

@@ -2,7 +2,16 @@
 
 ## Install using apt
 > ```
+> sudo apt update && sudo apt upgrade -y
 > sudo apt-get install -y git
+> sudo apt-get install -y build-essential
+> sudo apt-get install -y make
+> sudo apt-get install -y curl
+> sudo sh -c 'curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/microsoft.gpg'
+> sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+> sudo apt-get install -y code
+> sudo apt-get install -y unzip
+> sudo apt-get install -y libtool
 > sudo apt-get install -y g++
 > sudo apt-get install -y nvme-cli
 > sudo apt-get install -y uuid-dev
@@ -18,7 +27,6 @@
 > sudo apt-get install -y fio
 > sudo apt-get install -y libglib2.0
 > sudo apt-get install -y autoconf
-> sudo apt-get install -y libtool
 > sudo apt-get install -y aptitude
 > sudo aptitude install flex
 > sudo aptitude install bison
@@ -26,6 +34,11 @@
 > sudo apt-get install -y libffi-dev
 > sudo apt-get install -y libmount-dev
 > sudo apt-get install -y libpcre3-dev
+> sudo apt-get install -y sparse
+> sudo apt-get install -y libpixman-1-dev
+> sudo apt-get install -y libvirt-clients
+> sudo apt-get install -y 
+> sudo apt-get install -y 
 > sudo apt-get install -y 
 > ```
 

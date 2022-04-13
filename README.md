@@ -1,6 +1,6 @@
 # ZNS_dev
 
-### Based on Ubuntu 20.04 kernel 5.13.0-39-generic
+### Based on Ubuntu 20.04 LTS kernel 5.13.0-39-generic
 ## Install using apt
 > ```
 > sudo apt update && sudo apt upgrade -y
@@ -55,6 +55,15 @@
 > cd qemu-7.0.0-rc4
 > ./configure
 > make
+> make -j$(nproc)
+> sudo make install
 > ```
+
++ Qemu 설치 확인
+> ```
+> qemu-system-x86_64 --version
+> ```
+> ![스크린샷, 2022-04-13 16-25-29](https://user-images.githubusercontent.com/45022422/163122872-4e840566-4775-4b16-8486-17764b630229.png)
+
 
 

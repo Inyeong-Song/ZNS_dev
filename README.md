@@ -65,5 +65,10 @@
 > ```
 > ![스크린샷, 2022-04-13 16-25-29](https://user-images.githubusercontent.com/45022422/163122872-4e840566-4775-4b16-8486-17764b630229.png)
 
-
+## 우분투 설치
++ 우분투 설치 이미지 다운로드
+> ```
+> cd ~
+> wget https://releases.ubuntu.com/focal/ubuntu-20.04.4-live-server-amd64.iso
+> ```
 

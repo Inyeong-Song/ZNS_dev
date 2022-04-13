@@ -1,6 +1,6 @@
 # ZNS_dev
 
-### * Install using apt
+> Install using apt
 ```
 $ sudo apt-get install -y git
 $ sudo apt-get install -y g++
@@ -30,7 +30,7 @@ $ sudo apt-get install -y
 
 ```
 
-### * 시스템이 KVM 가상화를 지원하는지 확인하려면 다음 명령을 실행하십시오.
+> 시스템이 KVM 가상화를 지원하는지 확인하려면 다음 명령을 실행하십시오.
 
 ```
 $ sudo kvm-ok

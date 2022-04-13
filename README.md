@@ -1,6 +1,6 @@
 # ZNS_dev
 
-> Install using apt
+> ## Install using apt
 ```
 $ sudo apt-get install -y git
 $ sudo apt-get install -y g++

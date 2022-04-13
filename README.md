@@ -39,5 +39,12 @@ $ sudo kvm-ok
 ![스크린샷, 2022-04-12 15-52-15](https://user-images.githubusercontent.com/45022422/162898916-5ef22325-386d-465e-8616-18ef1c0a957a.png)
 
 
-
+> ## Install QEMU
+> ```
+> wget https://download.qemu.org/qemu-7.0.0-rc4.tar.xz
+> tar xvJf qemu-7.0.0-rc4.tar.xz
+> cd qemu-7.0.0-rc4
+> ./configure
+> make
+> ```
 

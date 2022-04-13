@@ -75,3 +75,15 @@
 > ```
 > qemu-img create -f qcow2 ubuntu.img 20G
 > ```
++ 해당 디스크에 운영체제 설치
+> ```
+> sudo qemu-system-x86_64 \
+>    -hda ubuntu.img \
+>    -boot d \
+>    -cdrom ubuntu-20.04.3-live-server-amd64.iso \
+>    -m $(expr $(grep MemTotal /proc/meminfo | awk '{print $2}') / $(expr 1024 '*' 1024))G \
+>    -smp $(nproc) \
+>    -cpu host \
+>    --enable-kvm \
+>    -vnc :2 
+> ```

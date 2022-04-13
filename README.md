@@ -1,5 +1,6 @@
 # ZNS_dev
 
+### Based on Ubuntu 20.04 kernel 5.13.0-39-generic
 ## Install using apt
 > ```
 > sudo apt update && sudo apt upgrade -y
@@ -9,7 +10,6 @@
 > sudo apt-get install -y curl
 > sudo sh -c 'curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/microsoft.gpg'
 > sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-> sudo apt-get install -y code
 > sudo apt-get install -y unzip
 > sudo apt-get install -y libtool
 > sudo apt-get install -y g++
@@ -37,7 +37,6 @@
 > sudo apt-get install -y sparse
 > sudo apt-get install -y libpixman-1-dev
 > sudo apt-get install -y libvirt-clients
-> sudo apt-get install -y 
 > sudo apt-get install -y 
 > sudo apt-get install -y 
 > ```

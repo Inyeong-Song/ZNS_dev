@@ -111,5 +111,20 @@
 > ```
 + 해당 디스크에 운영체제 설치
 > ```
-> 
+> sudo qemu-system-x86_64 -m 8G \
+> -enable-kvm \
+> -m 256 \
+> -hda [이미지이름].img \
+> -cdrom [OS파일이름].iso \
+> -boot d \
+> -vnc :2
 > ```
++ VNC로 VM 접속
+> ```
+> xvnc4viewer 127.0.0.1:2
+> ```
++ VM 실행
+> ```
+> qemu-system-x86_64 -hda ubuntu.img -vnc :2
+> ```
+

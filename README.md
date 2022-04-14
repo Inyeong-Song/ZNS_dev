@@ -38,6 +38,34 @@
 > sudo apt-get install -y libpixman-1-dev
 > sudo apt-get install -y libvirt-clients
 > sudo apt-get install -y 
+> sudo apt-get install -y git-email
+> sudo apt-get install -y libaio-dev
+> sudo apt-get install -y libbluetooth-dev
+> sudo apt-get install -y libbrlapi-dev
+> sudo apt-get install -y libbz2-dev
+> sudo apt-get install -y libcap-ng-dev
+> sudo apt-get install -y libcurl4-gnutls-dev
+> sudo apt-get install -y libgtk-3-dev
+> sudo apt-get install -y libibverbs-dev
+> sudo apt-get install -y libjpeg8-dev
+> sudo apt-get install -y libncurses5-dev
+> sudo apt-get install -y libnuma-dev
+> sudo apt-get install -y librbd-dev
+> sudo apt-get install -y librdmacm-dev
+> sudo apt-get install -y libsasl2-dev
+> sudo apt-get install -y libsdl2-dev
+> sudo apt-get install -y libseccomp-dev
+> sudo apt-get install -y libsnappy-dev
+> sudo apt-get install -y libssh-dev
+> sudo apt-get install -y libvde-dev
+> sudo apt-get install -y libvdeplug-dev
+> sudo apt-get install -y libvte-2.91-dev
+> sudo apt-get install -y libxen-dev
+> sudo apt-get install -y liblzo2-dev
+> sudo apt-get install -y valgrind
+> sudo apt-get install -y xfslibs-dev 
+> sudo apt-get install -y libnfs-dev
+> sudo apt-get install -y libiscsi-dev
 > sudo apt-get install -y 
 > ```
 

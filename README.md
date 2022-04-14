@@ -101,17 +101,13 @@
 > ```
 + 이미지 설치 디스크 생성
 > ```
-> qemu-img create -f qcow2 ubuntu.img 20G
+> ./bin/qemu-img create -f qcow2 qc2img 32G
+> ls -alh
 > ```
 + 해당 디스크에 운영체제 설치
 > ```
-> sudo qemu-system-x86_64 \
->    -hda ubuntu.img \
->    -boot d \
->    -cdrom ubuntu-20.04.4-live-server-amd64.iso \
->    -m $(expr $(grep MemTotal /proc/meminfo | awk '{print $2}') / $(expr 1024 '*' 1024))G \
->    -smp $(nproc) \
->    -cpu host \
->    --enable-kvm \
->    -vnc :2 
+> sudo ./bin/x86_64-softmmu/qemu-system-x86_64 -m 8G -enable-kvm \
+>	-drive if=virtio,file=qc2img,cache=none \
+>	-cdrom ubuntu-20.04.4-live-server-amd64.iso \
+> -vnc :2 
 > ```

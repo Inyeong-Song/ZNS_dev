@@ -124,10 +124,6 @@
 > -boot d \
 > -vnc :2
 > ```
-+ VNC로 VM 접속
-> ```
-> xvnc4viewer 127.0.0.1:2
-> ```
 + VM 실행
 > ```
 > qemu-system-x86_64 -hda ubuntu.img -vnc :2

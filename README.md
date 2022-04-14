@@ -107,7 +107,7 @@
 + 해당 디스크에 운영체제 설치
 > ```
 > sudo ./bin/x86_64-softmmu/qemu-system-x86_64 -m 8G -enable-kvm \
->	-drive if=virtio,file=qc2img,cache=none \
->	-cdrom ubuntu-20.04.4-live-server-amd64.iso \
+> -drive if=virtio,file=qc2img,cache=none \
+> -cdrom ubuntu-20.04.4-live-server-amd64.iso \
 > -vnc :2 
 > ```

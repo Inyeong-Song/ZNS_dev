@@ -76,7 +76,7 @@
 
 ### Install vnc viewer
 > ```
-> sudo apt-get install -y xvnc4viewer
+> https://www.realvnc.com/en/connect/download/viewer/linux/
 > ```
 
 ## 시스템이 KVM 가상화를 지원하는지 확인하려면 다음 명령을 실행하십시오.
@@ -132,4 +132,7 @@
 > ```
 > qemu-system-x86_64 -hda ubuntu.img -vnc :2
 > ```
-
++ VNC viewer VM 접속
+> ```
+> vncviewer 127.0.0.1:5902
+> ```

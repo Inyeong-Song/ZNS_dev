@@ -69,6 +69,11 @@
 > sudo apt-get install -y 
 > ```
 
+### Install Virtual machine manager
+> ```
+> sudo apt-get install -y virt-manager
+> ```
+
 ## 시스템이 KVM 가상화를 지원하는지 확인하려면 다음 명령을 실행하십시오.
 > ```
 > sudo kvm-ok
@@ -101,13 +106,10 @@
 > ```
 + 이미지 설치 디스크 생성
 > ```
-> ./bin/qemu-img create -f qcow2 qc2img 32G
+> qemu-img create -f qcow2 [이미지이름].img 32G
 > ls -alh
 > ```
 + 해당 디스크에 운영체제 설치
 > ```
-> sudo ./bin/x86_64-softmmu/qemu-system-x86_64 -m 8G -enable-kvm \
-> -drive if=virtio,file=qc2img,cache=none \
-> -cdrom ubuntu-20.04.4-live-server-amd64.iso \
-> -vnc :2 
+> 
 > ```

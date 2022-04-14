@@ -74,6 +74,11 @@
 > sudo apt-get install -y virt-manager
 > ```
 
+### Install vnc viewer
+> ```
+> sudo apt-get install -y xvnc4viewer
+> ```
+
 ## 시스템이 KVM 가상화를 지원하는지 확인하려면 다음 명령을 실행하십시오.
 > ```
 > sudo kvm-ok

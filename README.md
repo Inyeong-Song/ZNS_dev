@@ -118,10 +118,10 @@
 > ```
 > sudo qemu-system-x86_64 -m 8G \
 > -enable-kvm \
-> -m 256 \
 > -hda ubuntu.img \
 > -cdrom ubuntu-20.04.4-live-server-amd64.iso \
 > -boot d \
+> -vga virtio \
 > -vnc :2
 > ```
 + VM 실행

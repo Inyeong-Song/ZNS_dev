@@ -83,7 +83,7 @@
 > cd qemu-7.0.0-rc4
 > ./configure
 > make
-> make -j$(nproc)
+> make -j4
 > sudo make install
 > ```
 

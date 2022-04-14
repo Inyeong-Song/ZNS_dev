@@ -106,7 +106,7 @@
 > ```
 + 이미지 설치 디스크 생성
 > ```
-> qemu-img create -f qcow2 [이미지이름].img 32G
+> qemu-img create -f qcow2 ubuntu.img 32G
 > ls -alh
 > ```
 + 해당 디스크에 운영체제 설치
@@ -114,8 +114,8 @@
 > sudo qemu-system-x86_64 -m 8G \
 > -enable-kvm \
 > -m 256 \
-> -hda [이미지이름].img \
-> -cdrom [OS파일이름].iso \
+> -hda ubuntu.img \
+> -cdrom ubuntu-20.04.4-live-server-amd64.iso \
 > -boot d \
 > -vnc :2
 > ```

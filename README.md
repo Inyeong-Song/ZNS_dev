@@ -174,6 +174,6 @@
 > physical_block_size=4096,zoned=true,zoned.zone_size=64M,zoned.\
 > zone_capacity=62M,zoned.max_open=16,zoned.max_active=32,\
 > uuid=5e40ec5f-eeb6-4317-bc5e-c919796a5f79 \
-> -net user,hostfwd=tcp::${SSH_PORT}-:22 \
+> -net user,hostfwd=tcp::22 \
 > -net nic \
 > ```

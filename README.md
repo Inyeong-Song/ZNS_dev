@@ -103,7 +103,7 @@
 > ```
 > ![스크린샷, 2022-04-13 16-25-29](https://user-images.githubusercontent.com/45022422/163122872-4e840566-4775-4b16-8486-17764b630229.png)
 
-## 우분투 설치
+## QEMU에 우분투 설치
 + 우분투 설치 이미지 다운로드
 > ```
 > cd ~
@@ -131,4 +131,16 @@
 + VNC viewer VM 접속
 > ```
 > vncviewer 127.0.0.1:5902
+> ```
+
+### QEMU 재실행
+> ```
+> sudo qemu-system-x86_64 \
+> -hda ubuntu.img \
+> -m 8G \
+> -smp 4 \
+> -cpu host \
+> --enable-kvm \
+> -vga virtio \
+> -vnc :2
 > ```

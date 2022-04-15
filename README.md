@@ -132,8 +132,16 @@
 > ```
 > vncviewer 127.0.0.1:5902
 > ```
-
-### QEMU 재실행
++ 업데이트 가능한 커널 확인
+> ```
+> sudo apt-cache search linux-image-5.10
+> ```
++ 커널 업데이트
+> ```
+> sudo apt update -y && sudo apt upgrade -y
+> sudo apt install linux-image-5.10.0-1057-oem -y
+> ```
++ QEMU 재실행
 > ```
 > sudo qemu-system-x86_64 \
 > -hda ubuntu.img \
@@ -143,4 +151,29 @@
 > --enable-kvm \
 > -vga virtio \
 > -vnc :2
+> ```
+
+### ZNS 에뮬레이션
++ ZNS를 에뮬레이션하기 위한 디스크 생성 (8GiB 생성)
+> ```
+> dd if=/dev/zero of=zns.raw bs=1M count=8192
+> ```
++ Creating a ZNS and using the Backstore File
+> ```
+> sudo qemu-system-x86_64 \
+> -hda ubuntu.img \
+> -m 8G \
+> -smp 4 \
+> -cpu host \
+> --enable-kvm \
+> -vga virtio \
+> -vnc :2 \
+> -device nvme,id=nvme0,serial=deadbeef,zoned.zasl=5 \
+> -drive file=${znsimg},id=nvmezns0,format=raw,if=none \
+> -device nvme-ns,drive=nvmezns0,bus=nvme0,nsid=1,logical_block_size=4096,\
+> physical_block_size=4096,zoned=true,zoned.zone_size=64M,zoned.\
+> zone_capacity=62M,zoned.max_open=16,zoned.max_active=32,\
+> uuid=5e40ec5f-eeb6-4317-bc5e-c919796a5f79 \
+> -net user,hostfwd=tcp::${SSH_PORT}-:22 \
+> -net nic \
 > ```

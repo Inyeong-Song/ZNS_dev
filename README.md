@@ -177,3 +177,9 @@
 > -net user,hostfwd=tcp::2222-:22 \
 > -net nic \
 > ```
++ ZNS 동작 확인
+> ```
+> sudo apt install nvme-cli
+> sudo nvme list
+> sudo blkzone report /dev/nvme0n1 | less
+> ```

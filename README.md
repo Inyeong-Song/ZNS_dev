@@ -185,7 +185,7 @@
 > ```
 ### SSH로 QEMU와 통신하기
 + How to Transfer files between the Host and Qemu via SSH and NFS
-++ https://www.cnx-software.com/2011/10/02/how-to-transfer-files-between-host-and-qemu-via-ssh-and-nfs/
++ + https://www.cnx-software.com/2011/10/02/how-to-transfer-files-between-host-and-qemu-via-ssh-and-nfs/
 > ```
 > sudo apt-get install dropbear
 > ```

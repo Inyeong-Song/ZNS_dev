@@ -204,3 +204,11 @@
 > md5sum u20s.qcow2 > tmp.md5sum
 > diff tmp.md5sum u20s.md5sum
 > ```
+> If diff complains that the above two files differ, then the VM image file is corrupted.
+> Please redo the above steps.
++ The user account and guest OS of the VM:
+> ```
+> username: femu
+> passwd : femu
+> Guest OS: Ubuntu 20.04.1 server, with kernel 5.4
+> ```

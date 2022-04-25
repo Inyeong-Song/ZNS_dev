@@ -212,3 +212,18 @@
 > passwd : femu
 > Guest OS: Ubuntu 20.04.1 server, with kernel 5.4
 > ```
++ FEMU 컴파일 및 실행
+> ```
+> git clone https://github.com/ucare-uchicago/femu.git
+> cd femu
+> mkdir build-femu
++ FEMU 빌드 디렉터리로 변경
+> ```
+> cd build-femu
+> ```
++ FEMU 사용에 필요한 스크립트들의 복사 과정
+cp ../femu-scripts/femu-copy-scripts.sh .
+./femu-copy-scripts.sh .
+sudo ./pkgdep.sh # 데비안 및 우분투에서만 수행
+./femu-compile.sh
+> ```

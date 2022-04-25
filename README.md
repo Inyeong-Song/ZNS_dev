@@ -189,3 +189,18 @@
 > ```
 > sudo apt-get install dropbear
 > ```
+
+### FEMU 설치
++ 우분투 이미지 다운로드
+> ```
+> mkdir -p ~/images
+> cd ~/images
+> wget http://people.cs.uchicago.edu/~huaicheng/femu/femu-vm.tar.xz
+> tar xJvf femu-vm.tar.xz
+> ```
+> After these steps, you will get two files: "u20s.qcow2" and "u20s.md5sum".
++ You can verify the integrity of the VM image file by doing:
+> ```
+> md5sum u20s.qcow2 > tmp.md5sum
+> diff tmp.md5sum u20s.md5sum
+> ```

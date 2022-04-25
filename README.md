@@ -191,7 +191,7 @@
 > ```
 
 ### FEMU 설치
-+ 우분투 이미지 다운로드
++ FEMU 우분투 이미지 다운로드
 > ```
 > mkdir -p ~/images
 > cd ~/images

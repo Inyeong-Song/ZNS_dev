@@ -222,8 +222,9 @@
 > cd build-femu
 > ```
 + FEMU 사용에 필요한 스크립트들의 복사 과정
-cp ../femu-scripts/femu-copy-scripts.sh .
-./femu-copy-scripts.sh .
-sudo ./pkgdep.sh # 데비안 및 우분투에서만 수행
-./femu-compile.sh
+> ```
+> cp ../femu-scripts/femu-copy-scripts.sh .
+> ./femu-copy-scripts.sh .
+> sudo ./pkgdep.sh # 데비안 및 우분투에서만 수행
+> ./femu-compile.sh
 > ```

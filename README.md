@@ -2,8 +2,8 @@
 
 ### Based on Ubuntu 20.04 LTS kernel 5.13.0-39-generic
 ## Install using apt
-## local
 > ```
+> # local system
 > sudo apt update && sudo apt upgrade -y
 > sudo apt-get install -y git
 > sudo apt-get install -y build-essential

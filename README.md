@@ -1,9 +1,8 @@
 # ZNS_dev
 
 ### Based on Ubuntu 20.04 LTS kernel 5.13.0-39-generic
-## Install using apt
+## Install using apt (local system)
 > ```
-> # local system
 > sudo apt update && sudo apt upgrade -y
 > sudo apt-get install -y git
 > sudo apt-get install -y build-essential
@@ -70,29 +69,25 @@
 > sudo apt-get install -y 
 > ```
 
-### Install Virtual machine manager
+### Install Virtual machine manager (local system)
 > ```
-> # local system
 > sudo apt-get install -y virt-manager
 > ```
 
-### Install vnc viewer
+### Install vnc viewer (local system)
 > ```
-> # local system
 > https://www.realvnc.com/en/connect/download/viewer/linux/
 > ```
 
-## 시스템이 KVM 가상화를 지원하는지 확인하려면 다음 명령을 실행하십시오.
+## 시스템이 KVM 가상화를 지원하는지 확인하려면 다음 명령을 실행 (local system)
 > ```
-> # local system
 > sudo kvm-ok
 > ```
 > ![스크린샷, 2022-04-12 15-52-15](https://user-images.githubusercontent.com/45022422/162898916-5ef22325-386d-465e-8616-18ef1c0a957a.png)
 
 
-## Install QEMU
+## Install QEMU (local system)
 > ```
-> # local system
 > wget https://download.qemu.org/qemu-7.0.0-rc4.tar.xz
 > tar xvJf qemu-7.0.0-rc4.tar.xz
 > cd qemu-7.0.0-rc4
@@ -102,30 +97,27 @@
 > sudo make install
 > ```
 
-+ Qemu 설치 확인
++ Qemu 설치 확인 (local system)
 > ```
-> # local system
 > qemu-system-x86_64 --version
 > ```
 > ![스크린샷, 2022-04-13 16-25-29](https://user-images.githubusercontent.com/45022422/163122872-4e840566-4775-4b16-8486-17764b630229.png)
 
 ## QEMU에 우분투 설치
-+ 우분투 설치 이미지 다운로드
++ 우분투 설치 이미지 다운로드 (local system)
 > ```
-> # local system
 > cd ~
 > wget https://releases.ubuntu.com/focal/ubuntu-20.04.4-live-server-amd64.iso
+> 또는
 > wget http://releases.ubuntu.com/22.04/ubuntu-22.04-live-server-amd64.iso
 > ```
-+ 이미지 설치 디스크 생성
++ 이미지 설치 디스크 생성 (local system)
 > ```
-> # local system
 > qemu-img create -f qcow2 ubuntu.img 64G
 > ls -alh
 > ```
-+ 해당 디스크에 운영체제 설치
++ 해당 디스크에 운영체제 설치 (local system)
 > ```
-> # local system
 > sudo qemu-system-x86_64 \
 > -m 8G \
 > -enable-kvm \
@@ -135,30 +127,21 @@
 > -vga virtio \
 > -vnc :2
 > ```
-+ VM 실행
++ VNC viewer VM 접속 (local system)
 > ```
-> # local system
-> qemu-system-x86_64 -hda ubuntu.img -vnc :2
-> ```
-+ VNC viewer VM 접속
-> ```
-> # local system
 > vncviewer 127.0.0.1:5902
 > ```
-+ 업데이트 가능한 커널 확인
++ 업데이트 가능한 커널 확인 (virtual system)
 > ```
-> # virtual system
 > sudo apt-cache search linux-image-5.10
 > ```
-+ 커널 업데이트
++ 커널 업데이트 (virtual system)
 > ```
-> # virtual system
 > sudo apt update -y && sudo apt upgrade -y
 > sudo apt install linux-image-5.10.0-1057-oem -y
 > ```
-+ QEMU 재실행
++ QEMU 재실행 (local system)
 > ```
-> # local system
 > sudo qemu-system-x86_64 \
 > -hda ubuntu.img \
 > -m 8G \
@@ -170,14 +153,12 @@
 > ```
 
 ### ZNS 에뮬레이션
-+ ZNS를 에뮬레이션하기 위한 디스크 생성 (8GiB 생성)
++ ZNS를 에뮬레이션하기 위한 디스크 생성 (8GiB 생성) (local system)
 > ```
-> # local system
 > dd if=/dev/zero of=zns.raw bs=1M count=8192
 > ```
-+ Creating a ZNS and using the Backstore File
++ Creating a ZNS and using the Backstore File (local system)
 > ```
-> # local system
 > sudo qemu-system-x86_64 \
 > -hda ubuntu.img \
 > -m 8G \
@@ -195,34 +176,30 @@
 > -net user,hostfwd=tcp::2222-:22 \
 > -net nic \
 > ```
-+ ZNS 동작 확인
++ ZNS 동작 확인 (virtual system)
 > ```
-> # virtual system
 > sudo apt install nvme-cli
 > sudo nvme list
 > sudo blkzone report /dev/nvme0n1 | less
 > ```
 ### SSH로 QEMU와 통신하기
-+ How to Transfer files between the Host and Qemu via SSH and NFS
++ How to Transfer files between the Host and Qemu via SSH and NFS (local system)
 + https://www.cnx-software.com/2011/10/02/how-to-transfer-files-between-host-and-qemu-via-ssh-and-nfs/
 > ```
-> # local system
 > sudo apt-get install dropbear
 > ```
 
 ### FEMU 설치
-+ FEMU 우분투 이미지 다운로드
++ FEMU 우분투 이미지 다운로드 (local system)
 > ```
-> # local system
 > mkdir -p ~/images
 > cd ~/images
 > wget http://people.cs.uchicago.edu/~huaicheng/femu/femu-vm.tar.xz
 > tar -xJvf femu-vm.tar.xz
 > ```
 > After these steps, you will get two files: "u20s.qcow2" and "u20s.md5sum".
-+ 이미지 검증 과정
++ 이미지 검증 과정 (local system)
 > ```
-> # local system
 > md5sum u20s.qcow2 > tmp.md5sum
 > diff tmp.md5sum u20s.md5sum
 > ```
@@ -234,9 +211,8 @@
 > passwd : femu
 > Guest OS: Ubuntu 20.04.1 server, with kernel 5.4
 > ```
-+ FEMU 컴파일 및 실행
++ FEMU 컴파일 및 실행 (local system)
 > ```
-> # local system
 > git clone https://github.com/ucare-uchicago/femu.git
 > cd femu
 > mkdir build-femu
@@ -244,9 +220,8 @@
 > ```
 > cd build-femu
 > ```
-+ FEMU 사용에 필요한 스크립트들의 복사 과정
++ FEMU 사용에 필요한 스크립트들의 복사 과정 (local system)
 > ```
-> # local system
 > cp ../femu-scripts/femu-copy-scripts.sh .
 > ./femu-copy-scripts.sh .
 > sudo ./pkgdep.sh # 데비안 및 우분투에서만 수행

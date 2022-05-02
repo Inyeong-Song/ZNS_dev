@@ -72,16 +72,19 @@
 
 ### Install Virtual machine manager
 > ```
+> # local system
 > sudo apt-get install -y virt-manager
 > ```
 
 ### Install vnc viewer
 > ```
+> # local system
 > https://www.realvnc.com/en/connect/download/viewer/linux/
 > ```
 
 ## 시스템이 KVM 가상화를 지원하는지 확인하려면 다음 명령을 실행하십시오.
 > ```
+> # local system
 > sudo kvm-ok
 > ```
 > ![스크린샷, 2022-04-12 15-52-15](https://user-images.githubusercontent.com/45022422/162898916-5ef22325-386d-465e-8616-18ef1c0a957a.png)
@@ -89,6 +92,7 @@
 
 ## Install QEMU
 > ```
+> # local system
 > wget https://download.qemu.org/qemu-7.0.0-rc4.tar.xz
 > tar xvJf qemu-7.0.0-rc4.tar.xz
 > cd qemu-7.0.0-rc4
@@ -100,6 +104,7 @@
 
 + Qemu 설치 확인
 > ```
+> # local system
 > qemu-system-x86_64 --version
 > ```
 > ![스크린샷, 2022-04-13 16-25-29](https://user-images.githubusercontent.com/45022422/163122872-4e840566-4775-4b16-8486-17764b630229.png)
@@ -107,16 +112,19 @@
 ## QEMU에 우분투 설치
 + 우분투 설치 이미지 다운로드
 > ```
+> # local system
 > cd ~
 > wget https://releases.ubuntu.com/focal/ubuntu-20.04.4-live-server-amd64.iso
 > ```
 + 이미지 설치 디스크 생성
 > ```
+> # local system
 > qemu-img create -f qcow2 ubuntu.img 32G
 > ls -alh
 > ```
 + 해당 디스크에 운영체제 설치
 > ```
+> # local system
 > sudo qemu-system-x86_64 -m 8G \
 > -enable-kvm \
 > -hda ubuntu.img \
@@ -127,23 +135,28 @@
 > ```
 + VM 실행
 > ```
+> # local system
 > qemu-system-x86_64 -hda ubuntu.img -vnc :2
 > ```
 + VNC viewer VM 접속
 > ```
+> # local system
 > vncviewer 127.0.0.1:5902
 > ```
 + 업데이트 가능한 커널 확인
 > ```
+> # virtual system
 > sudo apt-cache search linux-image-5.10
 > ```
 + 커널 업데이트
 > ```
+> # virtual system
 > sudo apt update -y && sudo apt upgrade -y
 > sudo apt install linux-image-5.10.0-1057-oem -y
 > ```
 + QEMU 재실행
 > ```
+> # local system
 > sudo qemu-system-x86_64 \
 > -hda ubuntu.img \
 > -m 8G \
@@ -157,10 +170,12 @@
 ### ZNS 에뮬레이션
 + ZNS를 에뮬레이션하기 위한 디스크 생성 (8GiB 생성)
 > ```
+> # local system
 > dd if=/dev/zero of=zns.raw bs=1M count=8192
 > ```
 + Creating a ZNS and using the Backstore File
 > ```
+> # local system
 > sudo qemu-system-x86_64 \
 > -hda ubuntu.img \
 > -m 8G \
@@ -180,6 +195,7 @@
 > ```
 + ZNS 동작 확인
 > ```
+> # virtual system
 > sudo apt install nvme-cli
 > sudo nvme list
 > sudo blkzone report /dev/nvme0n1 | less
@@ -188,12 +204,14 @@
 + How to Transfer files between the Host and Qemu via SSH and NFS
 + https://www.cnx-software.com/2011/10/02/how-to-transfer-files-between-host-and-qemu-via-ssh-and-nfs/
 > ```
+> # local system
 > sudo apt-get install dropbear
 > ```
 
 ### FEMU 설치
 + FEMU 우분투 이미지 다운로드
 > ```
+> # local system
 > mkdir -p ~/images
 > cd ~/images
 > wget http://people.cs.uchicago.edu/~huaicheng/femu/femu-vm.tar.xz
@@ -202,6 +220,7 @@
 > After these steps, you will get two files: "u20s.qcow2" and "u20s.md5sum".
 + 이미지 검증 과정
 > ```
+> # local system
 > md5sum u20s.qcow2 > tmp.md5sum
 > diff tmp.md5sum u20s.md5sum
 > ```
@@ -215,6 +234,7 @@
 > ```
 + FEMU 컴파일 및 실행
 > ```
+> # local system
 > git clone https://github.com/ucare-uchicago/femu.git
 > cd femu
 > mkdir build-femu
@@ -224,6 +244,7 @@
 > ```
 + FEMU 사용에 필요한 스크립트들의 복사 과정
 > ```
+> # local system
 > cp ../femu-scripts/femu-copy-scripts.sh .
 > ./femu-copy-scripts.sh .
 > sudo ./pkgdep.sh # 데비안 및 우분투에서만 수행

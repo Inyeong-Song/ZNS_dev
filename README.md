@@ -115,6 +115,7 @@
 > # local system
 > cd ~
 > wget https://releases.ubuntu.com/focal/ubuntu-20.04.4-live-server-amd64.iso
+> wget http://releases.ubuntu.com/22.04/ubuntu-22.04-live-server-amd64.iso
 > ```
 + 이미지 설치 디스크 생성
 > ```

@@ -120,13 +120,14 @@
 + 이미지 설치 디스크 생성
 > ```
 > # local system
-> qemu-img create -f qcow2 ubuntu.img 32G
+> qemu-img create -f qcow2 ubuntu.img 64G
 > ls -alh
 > ```
 + 해당 디스크에 운영체제 설치
 > ```
 > # local system
-> sudo qemu-system-x86_64 -m 8G \
+> sudo qemu-system-x86_64 \
+> -m 8G \
 > -enable-kvm \
 > -hda ubuntu.img \
 > -cdrom ubuntu-22.04-live-server-amd64.iso \

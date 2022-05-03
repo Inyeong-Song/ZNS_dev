@@ -185,6 +185,7 @@
 ### SSH로 QEMU와 통신하기 (local system)
 + How to Transfer files between the Host and Qemu via SSH and NFS (local system)
 + https://www.cnx-software.com/2011/10/02/how-to-transfer-files-between-host-and-qemu-via-ssh-and-nfs/
++ 내부 네트워크에서 putty로 접속 가능 (port : 2222)
 > ```
 > sudo apt-get install dropbear
 > ssh -p 2222 [virtual machine user name]@[local system IP]

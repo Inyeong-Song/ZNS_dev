@@ -182,11 +182,13 @@
 > sudo nvme list
 > sudo blkzone report /dev/nvme0n1 | less
 > ```
-### SSH로 QEMU와 통신하기
+### SSH로 QEMU와 통신하기 (local system)
 + How to Transfer files between the Host and Qemu via SSH and NFS (local system)
 + https://www.cnx-software.com/2011/10/02/how-to-transfer-files-between-host-and-qemu-via-ssh-and-nfs/
 > ```
 > sudo apt-get install dropbear
+> ssh -p 2222 [virtual machine user name]@[local system IP]
+> ssh -p 2222 siy@166.104.30.171
 > ```
 
 ### FEMU 설치

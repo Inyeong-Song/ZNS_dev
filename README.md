@@ -230,3 +230,80 @@
 > sudo ./pkgdep.sh # 데비안 및 우분투에서만 수행
 > ./femu-compile.sh
 > ```
++ 이미지 실행
++ User : femu
++ Password : femu
+> ```
+> sudo ./run-zns.sh
+> ```
++ 커널 업데이트
++ 우분투 16.04를 18.04로 업데이트 하는 명령어 리스트
+> ```
+> sudo sed -i 's/us.archive.ubuntu.com/mirror.kakao.com/g' /etc/apt/sources.list # 패키지 다운 속도가 빠른 곳으로 변경
+> sudo apt update -y
+> sudo apt upgrade -y
+> sudo do-release-upgrade
+> ```
++ 5.10 커널 설치
+> cd /tmp/
+> wget -c https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.10/amd64/linux-headers-5.10.0-051000_5.10.0-051000.202012132330_all.deb
+> wget -c https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.10/amd64/linux-headers-5.10.0-051000-generic_5.10.0-051000.202012132330_amd64.deb
+> wget -c https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.10/amd64/linux-image-unsigned-5.10.0-051000-generic_5.10.0-051000.202012132330_amd64.deb
+> wget -c https://kernel.ubuntu.com/~kernel-ppa/mainline/v5.10/amd64/linux-modules-5.10.0-051000-generic_5.10.0-051000.202012132330_amd64.deb
+> sudo dpkg -i *.deb
+> sudo update-grub
+> sudo reboot
+> ```
++ uname -r로 커널 버전 확인
+> ```
+> uname -r
+> ```
++ libzbd 설치
+> ```
+> git clone https://github.com/westerndigitalcorporation/libzbd.git
+> sudo apt install -y autoconf automake libtool m4 autoconf-archive
+> cd libzbd
+> sh ./autogen.sh
+> ./configure
+> make
+> sudo make install
+> ```
++ zns report 명령 실행
+> ```
+> sudo zbd report /dev/nvme0n1
+> ```
++ 결과 확인
+> ```
+> Zone 00000: swr, ofst 00000000000000, len 00000134217728, cap 00000134217728, wp 00000000000000, em, non_seq 0, reset 0
+> Zone 00001: swr, ofst 00000134217728, len 00000134217728, cap 00000134217728, wp 00000134217728, em, non_seq 0, reset 0
+> Zone 00002: swr, ofst 00000268435456, len 00000134217728, cap 00000134217728, wp 00000268435456, em, non_seq 0, reset 0
+> Zone 00003: swr, ofst 00000402653184, len 00000134217728, cap 00000134217728, wp 00000402653184, em, non_seq 0, reset 0
+> Zone 00004: swr, ofst 00000536870912, len 00000134217728, cap 00000134217728, wp 00000536870912, em, non_seq 0, reset 0
+> Zone 00005: swr, ofst 00000671088640, len 00000134217728, cap 00000134217728, wp 00000671088640, em, non_seq 0, reset 0
+> Zone 00006: swr, ofst 00000805306368, len 00000134217728, cap 00000134217728, wp 00000805306368, em, non_seq 0, reset 0
+> Zone 00007: swr, ofst 00000939524096, len 00000134217728, cap 00000134217728, wp 00000939524096, em, non_seq 0, reset 0
+> Zone 00008: swr, ofst 00001073741824, len 00000134217728, cap 00000134217728, wp 00001073741824, em, non_seq 0, reset 0
+> Zone 00009: swr, ofst 00001207959552, len 00000134217728, cap 00000134217728, wp 00001207959552, em, non_seq 0, reset 0
+> Zone 00010: swr, ofst 00001342177280, len 00000134217728, cap 00000134217728, wp 00001342177280, em, non_seq 0, reset 0
+> Zone 00011: swr, ofst 00001476395008, len 00000134217728, cap 00000134217728, wp 00001476395008, em, non_seq 0, reset 0
+> Zone 00012: swr, ofst 00001610612736, len 00000134217728, cap 00000134217728, wp 00001610612736, em, non_seq 0, reset 0
+> Zone 00013: swr, ofst 00001744830464, len 00000134217728, cap 00000134217728, wp 00001744830464, em, non_seq 0, reset 0
+> Zone 00014: swr, ofst 00001879048192, len 00000134217728, cap 00000134217728, wp 00001879048192, em, non_seq 0, reset 0
+> Zone 00015: swr, ofst 00002013265920, len 00000134217728, cap 00000134217728, wp 00002013265920, em, non_seq 0, reset 0
+> Zone 00016: swr, ofst 00002147483648, len 00000134217728, cap 00000134217728, wp 00002147483648, em, non_seq 0, reset 0
+> Zone 00017: swr, ofst 00002281701376, len 00000134217728, cap 00000134217728, wp 00002281701376, em, non_seq 0, reset 0
+> Zone 00018: swr, ofst 00002415919104, len 00000134217728, cap 00000134217728, wp 00002415919104, em, non_seq 0, reset 0
+> Zone 00019: swr, ofst 00002550136832, len 00000134217728, cap 00000134217728, wp 00002550136832, em, non_seq 0, reset 0
+> Zone 00020: swr, ofst 00002684354560, len 00000134217728, cap 00000134217728, wp 00002684354560, em, non_seq 0, reset 0
+> Zone 00021: swr, ofst 00002818572288, len 00000134217728, cap 00000134217728, wp 00002818572288, em, non_seq 0, reset 0
+> Zone 00022: swr, ofst 00002952790016, len 00000134217728, cap 00000134217728, wp 00002952790016, em, non_seq 0, reset 0
+> Zone 00023: swr, ofst 00003087007744, len 00000134217728, cap 00000134217728, wp 00003087007744, em, non_seq 0, reset 0
+> Zone 00024: swr, ofst 00003221225472, len 00000134217728, cap 00000134217728, wp 00003221225472, em, non_seq 0, reset 0
+> Zone 00025: swr, ofst 00003355443200, len 00000134217728, cap 00000134217728, wp 00003355443200, em, non_seq 0, reset 0
+> Zone 00026: swr, ofst 00003489660928, len 00000134217728, cap 00000134217728, wp 00003489660928, em, non_seq 0, reset 0
+> Zone 00027: swr, ofst 00003623878656, len 00000134217728, cap 00000134217728, wp 00003623878656, em, non_seq 0, reset 0
+> Zone 00028: swr, ofst 00003758096384, len 00000134217728, cap 00000134217728, wp 00003758096384, em, non_seq 0, reset 0
+> Zone 00029: swr, ofst 00003892314112, len 00000134217728, cap 00000134217728, wp 00003892314112, em, non_seq 0, reset 0
+> Zone 00030: swr, ofst 00004026531840, len 00000134217728, cap 00000134217728, wp 00004026531840, em, non_seq 0, reset 0
+> Zone 00031: swr, ofst 00004160749568, len 00000134217728, cap 00000134217728, wp 00004160749568, em, non_seq 0, reset 0
+> ```

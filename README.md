@@ -200,28 +200,28 @@
 > [stream1]
 > #offset=140660178944
 > #size=3714878275584
-> rw=randwrite: 512
+> rw=randwrite:512
 > rw_sequencer=sequential
 > io_size=4G
 > 
 > [stream2]
 > #offset=3855538454528
 > #size=3714878275584
-> rw=randwrite: 512
+> rw=randwrite:512
 > rw_sequencer=sequential
 > io_size=4G
 > 
 > [stream3]
 > #offset=7570416730112
 > #size=3714878275584
-> rw=randwrite: 512
+> rw=randwrite:512
 > rw_sequencer=sequential
 > io_size=4G
 > 
 > [stream4]
 > #offset=11285295005696
 > #size=3714878275584
-> rw=randwrite: 512
+> rw=randwrite:512
 > rw_sequencer=sequential
 > io_size=4G
 > ```

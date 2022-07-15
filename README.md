@@ -188,7 +188,7 @@
 > # streams.fio: 4 write streams
 > #
 > [global]
-> ioengine-psync
+> ioengine=psync
 > direct=1
 > thread=1
 > bs=512K
@@ -201,7 +201,7 @@
 > #offset=140660178944
 > #size=3714878275584
 > rw=randwrite: 512
-> rw_sequencer-sequential
+> rw_sequencer=sequential
 > io_size=4G
 > 
 > [stream2]

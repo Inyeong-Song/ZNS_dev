@@ -182,6 +182,49 @@
 > sudo nvme list
 > sudo blkzone report /dev/nvme0n1 | less
 > ```
++ FIO jobfile
+> ```
+> #
+> # streams.fio: 4 write streams
+> #
+> [global]
+> ioengine-psync
+> direct=1
+> thread=1
+> bs=512K
+> continue_on_error=none
+> filename=/dev/nvme0n1
+> group_reporting=1
+> zonemode=zbd
+> 
+> [stream1]
+> #offset=140660178944
+> #size=3714878275584
+> rw=randwrite: 512
+> rw_sequencer-sequential
+> io_size=4G
+> 
+> [stream2]
+> #offset=3855538454528
+> #size=3714878275584
+> rw=randwrite: 512
+> rw_sequencer=sequential
+> io_size=4G
+> 
+> [stream3]
+> #offset=7570416730112
+> #size=3714878275584
+> rw=randwrite: 512
+> rw_sequencer=sequential
+> io_size=4G
+> 
+> [stream4]
+> #offset=11285295005696
+> #size=3714878275584
+> rw=randwrite: 512
+> rw_sequencer=sequential
+> io_size=4G
+> ```
 ### SSH로 QEMU와 통신하기 (local system)
 + How to Transfer files between the Host and Qemu via SSH and NFS (local system)
 + https://www.cnx-software.com/2011/10/02/how-to-transfer-files-between-host-and-qemu-via-ssh-and-nfs/
